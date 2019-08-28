@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MediaPlayer</string>
+
+    <string name="playback_channel_name">Playback Channel</string>
+    <string name="label_play">play</string>
+    <string name="label_pause">pause</string>
+    <string name="label_next">next</string>
+    <string name="label_previous">previous</string>
+    <string name="broadcast_update_ui">broadcast_update_ui</string>
+    <string name="broadcast_new_media_id">broadcast_new_media_id</string>
+    <string name="broadcast_seekbar_update">broadcast_seekbar_update</string>
+    <string name="label_play_pause">Play and pause toggle</string>
+
+    <color name="notification_bg">#e91e63</color>
+
+</resources>
