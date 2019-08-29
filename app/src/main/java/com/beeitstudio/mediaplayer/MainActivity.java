@@ -43,13 +43,13 @@ public class MainActivity extends AppCompatActivity {
         mTitleTextView = findViewById(R.id.song_title);
         mArtistTextView = findViewById(R.id.song_artist);
         mAlbumArt = findViewById(R.id.album_art);
-        mMediaControlsImage = findViewById(R.id.media_controls);
+        mMediaControlsImage = findViewById(R.id.iv_play_pause);
         mSeekBarAudio = findViewById(R.id.seekbar_audio);
 
         final ClickListener clickListener = new ClickListener();
-        findViewById(R.id.button_previous).setOnClickListener(clickListener);
-        findViewById(R.id.button_play).setOnClickListener(clickListener);
-        findViewById(R.id.button_next).setOnClickListener(clickListener);
+        findViewById(R.id.iv_previous).setOnClickListener(clickListener);
+        findViewById(R.id.iv_play_pause).setOnClickListener(clickListener);
+        findViewById(R.id.iv_next).setOnClickListener(clickListener);
 
         mMediaBrowserHelper = new MediaBrowserConnection(this);
         mMediaBrowserHelper.registerCallback(new MediaBrowserListener());
@@ -140,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onQueueChanged(List<MediaSessionCompat.QueueItem> queue) {
             super.onQueueChanged(queue);
+            Log.d(TAG, "onQueueChanged: CALLED");
         }
     }
 
@@ -153,17 +154,17 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
-                case R.id.button_previous:
+                case R.id.iv_previous:
                     mMediaBrowserHelper.getTransportControlls().skipToPrevious();
                     break;
-                case R.id.button_play:
+                case R.id.iv_play_pause:
                     if (mIsPlaying) {
                         mMediaBrowserHelper.getTransportControlls().pause();
                     } else {
                         mMediaBrowserHelper.getTransportControlls().play();
                     }
                     break;
-                case R.id.button_next:
+                case R.id.iv_next:
                     mMediaBrowserHelper.getTransportControlls().skipToNext();
                     break;
             }

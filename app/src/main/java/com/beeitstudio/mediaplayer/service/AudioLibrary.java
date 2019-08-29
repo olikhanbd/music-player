@@ -29,7 +29,7 @@ public class AudioLibrary {
                 "Uk7",
                 "Uk7",
                 "Various",
-                0,
+                100,
                 TimeUnit.SECONDS,
                 "t",
                 "http://uk7.internet-radio.com:8226",
